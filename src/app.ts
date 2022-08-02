@@ -16,7 +16,7 @@ app.use(userRouter);
 app.use(authRouter);
 app.use(hatRouter);
 app.use(hatRecicleRouter)
-app.use(hatDeletedPermanentlyRouter)
+app.use(hatDeletedPermanentlyRouter) 
 
 
 app.use(function (err: any, _req: Request, res: Response, next: NextFunction) {
