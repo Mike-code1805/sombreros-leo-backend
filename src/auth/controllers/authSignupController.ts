@@ -9,8 +9,10 @@ export const authSignup = async (
     next: NextFunction
 ) => {
     try {        
-        const user = await authCreateUserService(req.body);
-        res.status(201).json(user);
+        const token = await authCreateUserService(req.body);
+        res.status(200).json({
+            token,
+          });
     } catch (error: any) {
         next(new ApplicationError(400, error.message));
     }

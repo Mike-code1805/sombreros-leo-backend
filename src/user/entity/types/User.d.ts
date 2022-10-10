@@ -3,7 +3,7 @@ import { Types } from "mongoose";
 export interface User {
   id: UserIdType;
   username: string;
-  email: string;
+  email?: string;
   isAdmin?: boolean;
   password: string;
   img?: string;

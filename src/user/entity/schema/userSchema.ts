@@ -1,5 +1,5 @@
-import mongoose from "mongoose";
-import { User } from "../types/User";
+import mongoose from 'mongoose';
+import { User } from '../types/User';
 
 const Schema = mongoose.Schema;
 
@@ -9,15 +9,13 @@ export const userSchemma = new Schema<User>({
     required: true,
     unique: true,
   },
-  email: {
-    type: String,
-    required: true,
-    unique: true,
-    lowercase: true,
-  },
   isAdmin: {
     type: Boolean,
     default: false,
+  },
+  email: {
+    type: String,
+    default: null,
   },
   password: {
     type: String,
@@ -40,10 +38,10 @@ export const userSchemma = new Schema<User>({
   },
 });
 
-userSchemma.virtual("hats", {
-  ref: "Hat",
-  localField: "_id",
-  foreignField: "owner",
+userSchemma.virtual('hats', {
+  ref: 'Hat',
+  localField: '_id',
+  foreignField: 'owner',
 });
-userSchemma.set("toJSON", { virtuals: true });
-userSchemma.set("toObject", { virtuals: true });
+userSchemma.set('toJSON', { virtuals: true });
+userSchemma.set('toObject', { virtuals: true });
