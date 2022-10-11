@@ -16,6 +16,7 @@ export const authRefreshTokenService = async (
   const currentToken = await findOneResourceByField(TokenModel)({
     token: refreshToken,
   });
+  
   if (!currentToken) throw new Error("invalid token");
 
   try {

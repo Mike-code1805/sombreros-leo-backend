@@ -8,8 +8,9 @@ export const validateUserController = async (
   next: NextFunction
 ) => {
   try {
-    const result = await authValidateUserAccount(req.params.id);
-    res.status(200).json({ result });
+    const { authorization } = req.headers;
+    const token = await authValidateUserAccount(authorization!);
+    res.status(200).json({ token });
   } catch (error: any) {
     next(new ApplicationError(400, error.message));
   }
