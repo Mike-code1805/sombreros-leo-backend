@@ -16,9 +16,6 @@ export const authValidateUserAccount = async (
     );
     if (!user) throw new Error('invalid user id');
 
-    console.log('userValidate->', userValidate);
-    console.log('user->', user);
-
     return {
       authToken: authorization,
       username: user[0].username,

@@ -2,7 +2,7 @@ import * as yup from 'yup';
 
 export const hatSchema = yup.object({
   body: yup.object({
-    name: yup.string(),
+    name: yup.string().required('El nombre es requerido'),
     color_hat: yup.string(),
     cintillo: yup
       .string()

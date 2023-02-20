@@ -20,7 +20,7 @@ export const authCreateUserService = async (
       username: nameUser,
       password: passwordUser,
     });
-    console.log(user);
+
     if (!user.valid) throw new Error('user is not valid ');
     const tokens = await authCreateTokenService(
       user.id,
