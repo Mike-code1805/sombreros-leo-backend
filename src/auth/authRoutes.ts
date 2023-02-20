@@ -20,5 +20,4 @@ authRouter
   .post(bodyRequestValidator(signUpUserSchema), authSignup);
 
 authRouter.route('/api/auth/validation').get(validateUserController);
-
 export default authRouter;
