@@ -1,23 +1,23 @@
-import express, { Application, NextFunction, Request, Response } from "express";
-import hatRouter from "./hat/hatRoutes";
-import authRouter from "./auth/authRoutes";
-import userRouter from "./user/userRoutes";
-import hatRecicleRouter from "./hatRecicle/hatRecicleRoutes";
-import hatDeletedPermanentlyRouter from "./hatDeletedPermanently/hatDeletedPermanentlyRoutes";
-
-import cors from "cors";
+import express, { Application, NextFunction, Request, Response } from 'express';
+import hatRouter from './hat/hatRoutes';
+import authRouter from './auth/authRoutes';
+import userRouter from './user/userRoutes';
+import hatRecicleRouter from './hatRecicle/hatRecicleRoutes';
+import hatDeletedPermanentlyRouter from './hatDeletedPermanently/hatDeletedPermanentlyRoutes';
+import collectRouter from './collect/collectRoutes';
+import cors from 'cors';
 
 const app: Application = express();
 
-app.use(cors())
+app.use(cors());
 app.use(express.json());
 
 app.use(userRouter);
 app.use(authRouter);
 app.use(hatRouter);
-app.use(hatRecicleRouter)
-app.use(hatDeletedPermanentlyRouter) 
-
+app.use(hatRecicleRouter);
+app.use(hatDeletedPermanentlyRouter);
+app.use(collectRouter);
 
 app.use(function (err: any, _req: Request, res: Response, next: NextFunction) {
   res
