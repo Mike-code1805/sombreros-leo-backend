@@ -12,6 +12,9 @@ export const collectSchema = new Schema<Collect>(
     price: {
       type: String,
     },
+    date: {
+      type: String,
+    },
     owner: {
       type: Schema.Types.ObjectId,
       ref: 'Collect',

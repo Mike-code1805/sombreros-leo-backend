@@ -8,12 +8,13 @@ export const createCollectController = async (
   res: Response,
   next: NextFunction
 ): Promise<void> => {
-  const { name, observations, price, owner } = req.body;
+  const { name, observations, price, date, owner } = req.body;
   try {
     const newCollect = await createCollectService({
       name,
       observations,
       price,
+      date,
       owner,
     });
     res.status(201).json(newCollect);

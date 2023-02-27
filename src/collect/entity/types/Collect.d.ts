@@ -5,6 +5,7 @@ export interface Collect {
   id: CollectId;
   name: string;
   observations: string;
+  date: string;
   price: string;
   owner: HatId;
 }
